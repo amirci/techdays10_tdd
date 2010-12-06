@@ -1,0 +1,45 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    albacore (0.1.5)
+      net-sftp (>= 2.0.2)
+      net-ssh (>= 2.0.15)
+      rake (>= 0.8.7)
+      rubyzip (>= 0.9.1)
+    castle.core (1.1.0.0)
+    castle.dynamicproxy2 (2.1.0.0)
+      castle.core (= 1.1.0.0)
+    fluentnhibernate (1.1.0.685)
+      nhibernate (= 2.1.2.4000)
+    git (1.2.5)
+    log4net (1.2.10.0)
+    maventhought.commons (0.2.0.0)
+    maventhought.testing (0.2.0.0)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.0.23)
+    nhibernate (2.1.2.4000)
+      castle.core (= 1.1.0.0)
+      castle.dynamicproxy2 (= 2.1.0.0)
+      log4net (= 1.2.10.0)
+    noodle (0.3.0)
+      bundler (>= 1.0.0.rc.3)
+      rake
+    rake (0.8.7)
+    rubyzip (0.9.4)
+    sharptestsex (1.0.0.0.20100911)
+    sqlite3-dotnet (3.7.2.1)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  albacore
+  fluentnhibernate
+  git
+  maventhought.commons
+  maventhought.testing
+  nhibernate
+  noodle
+  sharptestsex
+  sqlite3-dotnet

@@ -1,0 +1,21 @@
+source :rubygems
+
+gem 'albacore'
+gem 'git'
+gem 'noodle'
+
+group :dev do
+	gem 'maventhought.testing'
+	gem 'maventhought.commons'
+	gem 'sharptestsex'
+	gem 'nhibernate'
+	gem 'fluentnhibernate'
+	gem 'sqlite3-dotnet'
+end
+
+group :tools do
+#  gem 'stylecop'
+#  gem 'gallio'
+#  gem 'nunit'
+end
+
