@@ -82,7 +82,12 @@
     <Compile Include="When_movie_gets_release_date_assigned.cs">
       <DependentUpon>MovieSpecification.cs</DependentUpon>
     </Compile>
-    <Compile Include="When_media_library_adds_a_movie.cs" />
+    <Compile Include="When_media_library_adds_a_movie.cs">
+      <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="When_media_library_clears_contents.cs">
+      <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\main\MavenThought.MediaLibrary.Core\MavenThought.MediaLibrary.Core.csproj">
