@@ -20,6 +20,9 @@ Folder structure of the project:
 Prerequisites to run it:
 	* Rake: Install ruby or iron ruby with ruby gems to get rake.
 		Here some instructions: http://marcinobel.com/index.php/rake-net-projects-installation-setup/
+	* Install rake: gem install rake
+	* Install bundler: gem install bundler
+	* Run: rake setup (that should download all dependencies)
 	
 Prerequisites to modify it:
 	* VS 2010
@@ -36,10 +39,6 @@ Sanity check:
 	* From command prompt, on the root of the project run "rake -T", u should see all the tasks.
 	* From command prompt, on the root of the project run "rake build"
 	* From command prompt, on the root of the project run "rake test:all", all tests should run, u should see the output on the command window.
-	* From command prompt, on the root of the project run "rake test:features", all the features should run, u should see the browser 
-	  appear and dissaper, and the output on the command window. The result should look something like:
-	  
-		Tests run: 3, Errors: 0, Failures: 0, Inconclusive: 1, Time.....
 	
 If u r attending the presentation and have any issues setting up the code feel free to find me and letting me know, I'll help you with the setup.
 
