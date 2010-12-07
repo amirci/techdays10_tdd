@@ -91,6 +91,7 @@
     <Compile Include="When_media_library_lists_non_violent_movies.cs">
       <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
     </Compile>
+    <Compile Include="When_media_library_finds_the_poster.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\main\MavenThought.MediaLibrary.Core\MavenThought.MediaLibrary.Core.csproj">

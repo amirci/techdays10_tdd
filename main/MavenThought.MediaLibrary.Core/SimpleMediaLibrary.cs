@@ -74,5 +74,15 @@ namespace MavenThought.MediaLibrary.Core
 
             return this._contents.Where(m => !this._critic.IsViolent(m));
         }
+
+        /// <summary>
+        /// Finds the poster for a movie
+        /// </summary>
+        /// <param name="movie"></param>
+        /// <returns></returns>
+        public string Poster(IMovie movie)
+        {
+            return string.Empty;
+        }
     }
 }

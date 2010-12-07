@@ -63,6 +63,7 @@
     <Compile Include="IMovie.cs" />
     <Compile Include="IMovieCritic.cs" />
     <Compile Include="IPerson.cs" />
+    <Compile Include="IPosterService.cs" />
     <Compile Include="IReviewEngine.cs" />
     <Compile Include="ISearchEngine.cs" />
     <Compile Include="IUser.cs" />
