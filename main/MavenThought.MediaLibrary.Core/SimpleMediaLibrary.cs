@@ -23,16 +23,26 @@ namespace MavenThought.MediaLibrary.Core
         /// <summary>
         /// Poster service to find posters
         /// </summary>
-        private IPosterService _posterService;
+        private readonly IPosterService _posterService;
 
         /// <summary>
         /// Initializes a new instance of <see cref="SimpleMediaLibrary"/> class
         /// </summary>
         /// <param name="critic">Critic to use</param>
         public SimpleMediaLibrary(IMovieCritic critic)
+            : this(critic, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="SimpleMediaLibrary"/> class
+        /// </summary>
+        /// <param name="critic">Critic to use</param>
+        /// <param name="posterService"></param>
+        public SimpleMediaLibrary(IMovieCritic critic, IPosterService posterService)
         {
             _critic = critic;
-            _posterService = new XXXXX(); // What should I put here in order to test it?
+            _posterService = posterService;
         }
 
         /// <summary>
@@ -88,7 +98,7 @@ namespace MavenThought.MediaLibrary.Core
         /// <returns></returns>
         public string Poster(IMovie movie)
         {
-            return string.Empty;
+            return this._posterService.FindPoster(movie);
         }
     }
 }
