@@ -33,7 +33,9 @@ namespace MavenThought.MediaLibrary.Core.Tests
 
             foreach (var movie in _movies.Take(5))
             {
-                Dep<IMovieCritic>().Stub(c => c.IsViolent(movie)).Return(true);
+                var movie1 = movie;
+                
+                Dep<IMovieCritic>().Stub(c => c.IsViolent(movie1)).Return(true);
             }
         }
 
