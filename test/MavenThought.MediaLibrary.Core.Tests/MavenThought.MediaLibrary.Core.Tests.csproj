@@ -88,6 +88,7 @@
     <Compile Include="When_media_library_clears_contents.cs">
       <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
     </Compile>
+    <Compile Include="When_media_library_lists_non_violent_movies.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\main\MavenThought.MediaLibrary.Core\MavenThought.MediaLibrary.Core.csproj">
