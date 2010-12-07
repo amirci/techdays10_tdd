@@ -62,6 +62,7 @@
     <Compile Include="IMediaReview.cs" />
     <Compile Include="IMovie.cs" />
     <Compile Include="IMovieCritic.cs" />
+    <Compile Include="IMovieFactory.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="IPosterService.cs" />
     <Compile Include="IReviewEngine.cs" />

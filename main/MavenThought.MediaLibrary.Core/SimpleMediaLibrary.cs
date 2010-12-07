@@ -25,12 +25,14 @@ namespace MavenThought.MediaLibrary.Core
         /// </summary>
         private readonly IPosterService _posterService;
 
+        private IMovieFactory _factory;
+
         /// <summary>
         /// Initializes a new instance of <see cref="SimpleMediaLibrary"/> class
         /// </summary>
         /// <param name="critic">Critic to use</param>
         public SimpleMediaLibrary(IMovieCritic critic)
-            : this(critic, null)
+            : this(critic, null, null)
         {
         }
 
@@ -39,10 +41,14 @@ namespace MavenThought.MediaLibrary.Core
         /// </summary>
         /// <param name="critic">Critic to use</param>
         /// <param name="posterService"></param>
-        public SimpleMediaLibrary(IMovieCritic critic, IPosterService posterService)
+        /// <param name="factory"></param>
+        public SimpleMediaLibrary(IMovieCritic critic, 
+            IPosterService posterService,
+            IMovieFactory factory)
         {
             _critic = critic;
             _posterService = posterService;
+            _factory = factory;
         }
 
         /// <summary>
@@ -109,11 +115,7 @@ namespace MavenThought.MediaLibrary.Core
         {
             foreach (var pair in movies)
             {
-                this._contents.Add(new Movie
-                                       {
-                                           Title = pair.Key,
-                                           ReleaseDate = pair.Value,
-                                       });
+                this._contents.Add(this._factory.Create(pair.Key, pair.Value));
             }
         }
     }

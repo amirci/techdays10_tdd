@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MavenThought.MediaLibrary.Domain;
 using Rhino.Mocks;
 using MavenThought.Commons.Testing;
 using SharpTestsEx;
@@ -14,6 +15,7 @@ namespace MavenThought.MediaLibrary.Core.Tests
     public class When_media_library_imports_movies : SimpleMediaLibrarySpecification
     {
         private IDictionary<string, DateTime> _movies;
+        private ICollection<IMovie> _expected;
 
         /// <summary>
         /// Setup movies to import
@@ -28,6 +30,17 @@ namespace MavenThought.MediaLibrary.Core.Tests
                                    {"Spaceballs", new DateTime(1986)},
                                    {"Blazing Saddles", new DateTime(1974)}
                                };
+
+            this._expected = new List<IMovie>();
+
+            foreach (var pair in _movies)
+            {
+                var m = Mock<IMovie>();
+
+                Dep<IMovieFactory>().Stub(f => f.Create(pair.Key, pair.Value)).Return(m);
+
+                this._expected.Add(m);
+            }
         }
 
         /// <summary>
@@ -44,15 +57,7 @@ namespace MavenThought.MediaLibrary.Core.Tests
         [It]
         public void Should_contain_all_the_movies_from_the_dictionary()
         {
-            foreach (var pair in _movies)
-            {
-                this.Sut.Contents
-                    .FirstOrDefault(m => m.Title == pair.Key && m.ReleaseDate == pair.Value)
-                    .Should()
-                    .Not
-                    .Be
-                    .Null();
-            }
+            this.Sut.Contents.Should().Have.SameSequenceAs(this._expected);
         }
     }
 }
