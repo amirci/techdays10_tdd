@@ -21,12 +21,18 @@ namespace MavenThought.MediaLibrary.Core
         private readonly ICollection<IMovie> _contents = new List<IMovie>();
 
         /// <summary>
+        /// Poster service to find posters
+        /// </summary>
+        private IPosterService _posterService;
+
+        /// <summary>
         /// Initializes a new instance of <see cref="SimpleMediaLibrary"/> class
         /// </summary>
         /// <param name="critic">Critic to use</param>
         public SimpleMediaLibrary(IMovieCritic critic)
         {
             _critic = critic;
+            _posterService = new XXXXX(); // What should I put here in order to test it?
         }
 
         /// <summary>
