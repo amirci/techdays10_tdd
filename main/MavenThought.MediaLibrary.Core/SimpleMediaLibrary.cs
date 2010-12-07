@@ -100,5 +100,21 @@ namespace MavenThought.MediaLibrary.Core
         {
             return this._posterService.FindPoster(movie);
         }
+
+        /// <summary>
+        /// Import movies from dictionary
+        /// </summary>
+        /// <param name="movies"></param>
+        public void Import(IDictionary<string, DateTime> movies)
+        {
+            foreach (var pair in movies)
+            {
+                this._contents.Add(new Movie
+                                       {
+                                           Title = pair.Key,
+                                           ReleaseDate = pair.Value,
+                                       });
+            }
+        }
     }
 }
